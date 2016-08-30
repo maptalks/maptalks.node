@@ -17,7 +17,7 @@
   "author": [
     "Fu Zhen"
   ],
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/maptalks/maptalks.nodesvg/issues"
   },
