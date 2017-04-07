@@ -1,4 +1,4 @@
-# maptalks.nodesvg
+# maptalks.node
 maptalks adapter for Node
 
 ##Install
