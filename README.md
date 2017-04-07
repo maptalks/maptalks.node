@@ -1,10 +1,10 @@
 # maptalks.nodesvg
-SVG Convertor for maptalks.js in Node
+maptalks adapter for Node
 
 ##Install
 
 ```
-npm install maptalks.nodesvg --save
+npm install maptalks.node --save
 ```
 
 ## Usage
@@ -12,7 +12,7 @@ npm install maptalks.nodesvg --save
 ```javascript
 var maptalks= require('maptalks');
 //enable maptalks with SVG convertors.
-require('maptalks.nodesvg');
+require('maptalks.node');
 
 //do your stuff
 ```

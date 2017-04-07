@@ -1,12 +1,12 @@
 {
-  "name": "maptalks.nodesvg",
-  "version": "2.0.0",
-  "description": "SVG Convertor for maptalks in Node",
+  "name": "maptalks.node",
+  "version": "0.1.0",
+  "description": "maptalks adapter for Node",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:maptalks/maptalks.nodesvg.git"
+    "url": "git@github.com:maptalks/maptalks.node.git"
   },
   "keywords": [
     "maptalks",
@@ -18,9 +18,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maptalks/maptalks.nodesvg/issues"
+    "url": "https://github.com/maptalks/maptalks.node/issues"
   },
-  "homepage": "https://github.com/maptalks/maptalks.nodesvg",
+  "homepage": "https://github.com/maptalks/maptalks.node",
   "dependencies": {
     "svg2img": "^0.2.3"
   },
