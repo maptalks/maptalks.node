@@ -11,7 +11,7 @@ npm install maptalks.node --save
 
 ```javascript
 var maptalks= require('maptalks');
-//enable maptalks with SVG convertors.
+//enable maptalks node adapters.
 require('maptalks.node');
 
 //do your stuff
