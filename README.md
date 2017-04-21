@@ -1,7 +1,7 @@
 # maptalks.node
 maptalks adapter for Node
 
-##Install
+## Install
 
 ```
 npm install maptalks.node --save
