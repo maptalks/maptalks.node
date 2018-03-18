@@ -139,3 +139,5 @@ maptalks.Ajax.post.node = function (options, postData, cb) {
     req.end();
     return maptalks.Ajax;
 };
+
+module.exports = maptalks; 
