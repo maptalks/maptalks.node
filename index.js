@@ -5,6 +5,11 @@ var maptalks = require('maptalks'),
     fs = require('fs'),
     urlParser = require('url');
 
+var httpAgent = http.globalAgent;
+
+maptalks.setupHttpAgent = function(options) {
+    httpAgent = new http.Agent(options);
+}
 
 var loadRemoteImage = function (img, url, onComplete) {
     // http
@@ -20,11 +25,13 @@ var loadRemoteImage = function (img, url, onComplete) {
         'Accept': 'image/*,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate',
         'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
+        // This is header used in http/1.0, nodejs use http/1.1 by default
+        // 'Connection': 'keep-alive',
         'Host': urlObj.host,
         'Pragma': 'no-cache',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36'
     };
+    urlObj.agent = httpAgent;
     request(urlObj, function (res) {
         var data = [];
         res.on('data', function (chunk) {
@@ -109,9 +116,11 @@ function getClient(protocol) {
 
 
 maptalks.Ajax.get.node = function (url, cb) {
-    var parsed = urlParser.parse(url);
-    getClient(parsed.protocol)
-        .get(url, wrapCallback(cb))
+    var reqOpts = urlParser.parse(url);
+    reqOpts.method = 'GET';
+    reqOpts.agent = httpAgent;
+    getClient(reqOpts.protocol)
+        .get(reqOpts, wrapCallback(cb))
         .on('error', cb);
     return maptalks.Ajax;
 };
@@ -119,6 +128,7 @@ maptalks.Ajax.get.node = function (url, cb) {
 maptalks.Ajax.post.node = function (options, postData, cb) {
     var reqOpts = urlParser.parse(options.url);
     reqOpts.method = 'POST';
+    reqOpts.agent = httpAgent;
     if (!options.headers) {
         options.headers = {};
     }
