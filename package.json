@@ -13,16 +13,14 @@
     "node",
     "svg"
   ],
-  "author": [
-    "Fu Zhen"
-  ],
+  "author": "Fu Zhen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maptalks/maptalks.node/issues"
   },
   "homepage": "https://github.com/maptalks/maptalks.node",
   "dependencies": {
-    "svg2img": "^0.5.0"
+    "svg2img": "^0.6.1"
   },
   "peerDependencies": {
     "maptalks": "<2.0.0"
